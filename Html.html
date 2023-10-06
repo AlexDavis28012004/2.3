@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Concepts Demo</title>
+    <!-- Add appropriate links to Vue 3 and Vue Router libraries here -->
+    <link rel="stylesheet" href="your-vue-styles.css">
+</head>
+<body>
+    <div id="app">
+        <div>
+            <!-- 1. Template Syntax -->
+            <p>a. Text Interpolation: {{ message }}</p>
+            <p>b. Raw HTML: <span v-html="rawHtml"></span></p>
+            <p>c. Attribute Bindings: <div :id="dynamicId"></div></p>
+            <p>d. JavaScript expressions inside syntax i.e.{{ 2 + 3 }}</p>
+
+            <!-- 2. Methods -->
+            <button @click="sayHello">Say Hello</button>
+
+            <!-- 3. Reactivity Fundamentals -->
+            <p>Reactivity Fundamentals: {{ count }}</p>
+
+            <!-- 4. Computed Properties -->
+            <p>Computed Property: {{ computedValue }}</p>
+
+            <!-- 5. Class and Style Bindings -->
+            <div :class="classObject" :style="styleObject">Class and Style Bindings</div>
+
+            <!-- 6. List Rendering -->
+            <ul>
+                <li v-for="(item, index) in items" :key="index">{{ item.text }}</li>
+            </ul>
+
+            <!-- 7. Event Handling: Listening to Events -->
+            <button @click="handleClick">Click me</button>
+
+            <!-- 8. Form Input Bindings -->
+            <input type="text" v-model="inputValue" />
+            <input type="checkbox" v-model="isChecked" />
+            <input type="radio" v-model="selectedOption" value="option1" />
+            <input type="radio" v-model="selectedOption" value="option2" />
+            <select v-model="selectedValue">
+                <option value="value1">Option 1</option>
+                <option value="value2">Option 2</option>
+            </select>
+            <textarea v-model="textareaValue"></textarea>
+
+            <!-- 9. Watchers -->
+            <p>Watcher: {{ watchedValue }}</p>
+
+            <!-- 10. Components -->
+            <custom-component :propData="message" @customEvent="handleCustomEvent">
+                <template #slotName="slotProps">
+                    Slot Content: {{ slotProps.slotValue }}
+                </template>
+            </custom-component>
+
+            <!-- 11. Router -->
+            <router-link to="/route">Go to Route</router-link>
+            <router-view></router-view>
+        </div>
+    </div>
+    <!-- Add your Vue 3 app initialization code here -->
+</body>
+</html>
